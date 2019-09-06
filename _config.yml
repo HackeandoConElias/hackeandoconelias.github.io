@@ -3,7 +3,8 @@ author: HackeandoConElias
 email: elorozco@pm.me
 description: > # this means to ignore newlines until "show_exerpts:"
   Una serie de posts relatando mi aprendizaje en el campo de Ciber Seguridad. 
-  show_excerpts: true # set to true to show excerpts on the homepage
+
+show_excerpts: true # set to true to show excerpts on the homepage
 baseurl: ""
 
 # Minima date format
@@ -24,7 +25,7 @@ texture:
   social_links:
     twitter: EliasOrozcoCR
     github:  ExplosiveGalloPinto
-    linkedIn: /in/elías-orozco-rivera-245809188/ 
+    linkedIn: in/elías-orozco-rivera-245809188/ 
 
 # If you want to link only specific pages in your header, uncomment
 # this and add the path to the pages in order as they should show up

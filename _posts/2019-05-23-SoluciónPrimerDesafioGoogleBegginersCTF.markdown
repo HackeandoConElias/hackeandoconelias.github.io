@@ -3,12 +3,41 @@ layout: post
 title:  "Solución al primer desafio del Google's Begginers Quest CTF"
 date:   2019-05-09 21:03:36 +0530
 ---
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 
-![texture theme preview](https://images.unsplash.com/photo-1500322969630-a26ab6eb64cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80)
+**"Enter Space-Time Coordinates"** es el nombre del primer desafío, en donde el contexto es que estamos en una nave espacial sentados al frente del coordinador de viaje.
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+Luego de descargar el archivo a simple vista se puede ver que es un archivo ZIP, al abrirlo se encuentran dos archivos **log.txt** y **rand2**.
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+Analísis de los Archivos
+------------------------
+
+Para el analísis de los archivo usamos inicialmente utilizamos el comando `file`, el cuál permite obtener informacón basica de un archivo.
+
+```bash
+root@kali:~/Desktop/GoogleCTF/1stChallenge# file log.txt 
+log.txt: ASCII text
+
+root@kali:~/Desktop/GoogleCTF/1stChallenge# file rand2 
+rand2: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=0208fc60863053462fb733436cef1ed23cb6c78f, not stripped
+```
+Este analísis nos muestra que log.txt es un archivo de texto plano que aparentemente contiene una salida de rand2, el cuál es un archivo x86-64 ELF el cual puede ser ejecutado.
+
+Usualmente con el analísis basico me parece interesante usar el comando `cat` para dar un vistazo al contenido de los archivos, en este caso podemos ver la bandera a simple vista luego de ejecutar `cat rand2`
+
+![Screenshot de la bandera a simple vista.](/assets/images/googleCTFC1.png)
+
+Esta manera de obtener la bandera es un poco vulgar. Vamos a intentar maquillarla un poco.
+
+El camino rapido
+----------------
+
+De antemano se sabe que las banderas tienen el formato **CTF{bandera}**, con lo cual usando el una combinación del comando `strings` para revisar el contenido del binario del archivo ejecutable y usando `grep` buscamos CTF para buscar la bandera.
+
+```bash
+root@kali:~/Desktop/GoogleCTF/1stChallenge# strings rand2 | grep CTF
+Arrived at the flag. Congrats, your flag is: CTF{welcome_to_googlectf}
+```
+
+obteniendo así la bandera.
+
+Cabe recalcar que esta es una de las formas en la que se puede resolver este desafio, ya que analizando el binario se puede llegar a la manera "legitima" de obtener la bandera.
