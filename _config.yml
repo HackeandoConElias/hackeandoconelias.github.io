@@ -14,18 +14,17 @@ sass:
 permalink: /posts/:title/
 texture:
   title: Elías Orozco
-  tagline: Student .Developer. Infosec enthusiast
+  tagline: Estudiante. Desarrollador. Entusiasta de Ciberseguridad
   date_format: "%b %-d, %Y"
   style: black
   showNav: false
-  showPicker: true
+  showPicker: false
 
   # generate social links in footer
   social_links:
     twitter: EliasOrozcoCR
     github:  ExplosiveGalloPinto
-    linkedIn: https://www.linkedin.com/in/elías-orozco-rivera-245809188/
- 
+    linkedIn: /in/elías-orozco-rivera-245809188/ 
 
 # If you want to link only specific pages in your header, uncomment
 # this and add the path to the pages in order as they should show up
