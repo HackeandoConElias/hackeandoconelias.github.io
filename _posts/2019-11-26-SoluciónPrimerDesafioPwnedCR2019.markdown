@@ -18,10 +18,15 @@ En la página podemos ver información del evento: Horarios de las charlas, tall
 Podemos convertirlo a ASCII utilizando cualquier tipo de herramienta, en este caso usamos [rapidtables.com](https://www.rapidtables.com/convert/number/hex-to-ascii.html) y obtenemos lo siguiente:
 
 \# 0x46696e64 => Find
+
 \# 0x536f6d657468696e67 => Something
+
 \# 0x48657265 => Here
+
 \# 0x53656564 => Seed
+
 \# 0x50776e6564 => Pwned
+
 \# 0x4861636b72626f79 => Hackrboy
 
 Otro elemento que llama la atención es la barra de búsqueda que esta justo encima de las tendencias, y ya que la pista en el HEX dice que hay algo aquí vamos a darle un inspect:
@@ -40,6 +45,7 @@ A simple vista no hay nada más que ver en el sitio, por lo que pasamos a los de
 En el index del sitio podemos encontrar dos tiras en binario, las cuales podemos convertir a ASCII utilizando una herramienta en linea como [binaryhexconverter.com](https://www.binaryhexconverter.com/binary-to-ascii-text-converter) y obtenemos:
 
 01100011 00110000 01110010 01101001 00110000 01010101 01110011 01000010 00110000 01111001 00111111 => c0ri0UsB0y?
+
 01110000 00100000 01110111 00100000 01101110 0010000000100000 01110000 00100000 01110111 00100000 01101110 => p w n  p w n
 
 De momento no tenemos alguna utilidad para esta pista pero, luego de seguro será útil.
